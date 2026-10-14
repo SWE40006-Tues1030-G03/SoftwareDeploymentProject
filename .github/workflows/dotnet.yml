@@ -19,17 +19,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
      
-    - name: Build
-      run: dotnet build --no-restore --configuration Release
-
-    - name: Copy static files
-      run: cp -r SoftwareDeploymentProject/wwwroot SoftwareDeploymentProject/bin/Release/net10.0/
+    - name: Publish
+      run: dotnet publish SoftwareDeploymentProject/SoftwareDeploymentProject.csproj -c Release -o publish
     
     - name: Upload build artifact
       uses: actions/upload-artifact@v7
       with:
         name: build
-        path: SoftwareDeploymentProject/bin/Release/net10.0/*
+        path: publish/**
 
   create-image:
     runs-on: ubuntu-latest
