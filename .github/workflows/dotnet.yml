@@ -23,7 +23,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
 
     - name: Copy static files
-      run: cp -r SoftwareDeploymentProject/wwwroot/* SoftwareDeploymentProject/bin/Release/net10.0/
+      run: cp -r SoftwareDeploymentProject/wwwroot SoftwareDeploymentProject/bin/Release/net10.0/
     
     - name: Upload build artifact
       uses: actions/upload-artifact@v7
