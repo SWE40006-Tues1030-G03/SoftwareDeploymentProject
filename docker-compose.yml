@@ -2,10 +2,10 @@
 services:
   shopping-cart:
     build:
-      context: ./SoftwareDeploymentProject
-      dockerfile: ../SoftwareDeploymentProject.dockerfile
+      context: .
+      dockerfile: SoftwareDeploymentProject.multistage.dockerfile
 
-    image: shopping-cart
+    image: shopping-cart-auto
 
     ports:
       - "8081:8080"
@@ -15,4 +15,3 @@ services:
       ASPNETCORE_URLS: http://+:8080
 
     restart: unless-stopped
-
