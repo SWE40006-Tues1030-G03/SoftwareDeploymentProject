@@ -22,15 +22,22 @@ jobs:
     - name: Publish
       run: dotnet publish SoftwareDeploymentProject/SoftwareDeploymentProject.csproj -c Release -o publish
     
+    - name: Verify multi-stage Docker build
+      run: docker build -f SoftwareDeploymentProject.multistage.dockerfile -t shopping-cart-ci .
+
+    
     - name: Upload build artifact
       uses: actions/upload-artifact@v7
       with:
         name: build
         path: publish/**
 
+
   create-image:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs: build
+
 
     permissions:
       contents: read
