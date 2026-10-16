@@ -26,6 +26,22 @@ jobs:
       run: docker build -f SoftwareDeploymentProject.multistage.dockerfile -t shopping-cart-ci .
 
     
+    - name: Restore acceptance test tools
+      run: dotnet restore SoftwareDeploymentProject.E2E/SoftwareDeploymentProject.E2E.csproj --locked-mode
+
+    - name: Install Chromium and system dependencies
+      run: dotnet run --project SoftwareDeploymentProject.E2E --no-restore -- install --with-deps chromium
+
+    - name: Test and publish application
+      run: bash scripts/verify.sh --browser
+
+    - name: Upload test evidence
+      if: always()
+      uses: actions/upload-artifact@v7
+      with:
+        name: test-evidence
+        path: .artifacts/
+
     - name: Upload build artifact
       uses: actions/upload-artifact@v7
       with:
@@ -34,6 +50,7 @@ jobs:
 
 
   create-image:
+    # PRs verify application changes; only merged/pushed master builds publish images.
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     needs: build

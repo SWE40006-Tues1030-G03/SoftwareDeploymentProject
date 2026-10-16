@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="78d20492-2480-415d-ae73-c69c8c396537" name="@Christoms-MacBook-Pro 2026-10-16 14:19:10" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-16T14:19:10.2939630+11:00" queuing="2026-10-16T14:19:10.2939630+11:00" start="2026-10-16T14:19:07.2675570+11:00" finish="2026-10-16T14:19:10.2970780+11:00" />
+  <TestSettings name="default" id="8f6ee0d3-8050-4ffe-9df6-6dd50ceefd76">
+    <Deployment runDeploymentRoot="_Christoms-MacBook-Pro_2026-10-16_14_19_10" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="11da2afe-31a0-4882-b8e5-f50f86feb425" testId="d742bc6f-1e9e-15e5-cedd-cc6a7559f982" testName="SoftwareDeploymentProject.E2E.ShoppingTests.ShopperCanManageCartAndPlaceOrder" computerName="Christoms-MacBook-Pro" duration="00:00:02.6857306" startTime="2026-10-16T14:19:10.2462780+11:00" endTime="2026-10-16T14:19:10.2462900+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11da2afe-31a0-4882-b8e5-f50f86feb425" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="SoftwareDeploymentProject.E2E.ShoppingTests.ShopperCanManageCartAndPlaceOrder" storage="/users/christomalappadan/documents/chatgpt/swe40006/softwaredeploymentproject/softwaredeploymentproject.e2e/bin/release/net10.0/softwaredeploymentproject.e2e.dll" id="d742bc6f-1e9e-15e5-cedd-cc6a7559f982">
+      <Execution id="11da2afe-31a0-4882-b8e5-f50f86feb425" />
+      <TestMethod codeBase="/Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.E2E/bin/Release/net10.0/SoftwareDeploymentProject.E2E.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="SoftwareDeploymentProject.E2E.ShoppingTests" name="ShopperCanManageCartAndPlaceOrder" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d742bc6f-1e9e-15e5-cedd-cc6a7559f982" executionId="11da2afe-31a0-4882-b8e5-f50f86feb425" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 10.0.13)
+[xUnit.net 00:00:00.03]   Discovering: SoftwareDeploymentProject.E2E
+[xUnit.net 00:00:00.05]   Discovered:  SoftwareDeploymentProject.E2E
+[xUnit.net 00:00:00.05]   Starting:    SoftwareDeploymentProject.E2E
+[xUnit.net 00:00:02.76]   Finished:    SoftwareDeploymentProject.E2E
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

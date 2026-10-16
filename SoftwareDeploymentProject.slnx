@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="SoftwareDeploymentProject/SoftwareDeploymentProject.csproj" />
+  <Project Path="SoftwareDeploymentProject.Tests/SoftwareDeploymentProject.Tests.csproj" />
 </Solution>

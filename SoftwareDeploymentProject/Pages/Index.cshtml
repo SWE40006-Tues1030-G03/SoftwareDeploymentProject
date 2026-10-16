@@ -1,10 +1,73 @@
-﻿@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@page
+@model SoftwareDeploymentProject.Pages.IndexModel
+@using SoftwareDeploymentProject.Models
+@{ ViewData["Title"] = "Shop essentials"; }
+<section class="hero">
+    <div>
+<p class="eyebrow">THE CAMPUS COLLECTION / 2026</p>
+<h1>Everyday essentials.<br />
+<em>A little campus spirit.</em>
+</h1>
+<p class="hero-copy">From your first lecture to your next big idea.<br />Thoughtful staples for life at Swinburne.</p>
+<a class="button button-dark" href="#collection">Explore the collection <span aria-hidden="true">↘</span>
+</a>
+</div>
+    <div class="hero-art">
+<span class="edition">CAMPUS<br />ESSENTIALS</span>
+<partial name="_ProductArt" model='@("hoodie")' />
+<span class="hero-note">Your new everyday favourite.</span>
+</div>
+</section>
+@if (Model.Notice is not null) { <div class="notice" role="status">@Model.Notice <a asp-page="/Cart">View cart →</a>
+</div> }
+<section id="collection" class="collection">
+    <div class="section-heading">
+<div>
+<p class="eyebrow">GOOD THINGS, EVERY DAY</p>
+<h2>Shop the essentials</h2>
+</div>
+<span>@Model.Products.Count products · AUD</span>
+</div>
+    <nav class="filters" aria-label="Product categories">
+    @foreach (var category in new[] { "All", "Clothing", "Accessories", "Stationery" }) {
+        var selected = category == "All" ? string.IsNullOrEmpty(Model.Category) : Model.Category == category;
+        <a asp-page="/Index" asp-route-category='@(category == "All" ? null : category)' class='@(selected ? "selected" : "")' aria-current='@(selected ? "page" : null)'>@category</a>
+    }
+    </nav>
+    <div class="product-grid">
+    @foreach (var product in Model.Products) {
+        <article class="product-card" data-testid="product-@product.Id">
+            <div class="product-image art-@product.Icon">
+<partial name="_ProductArt" model="product.Icon" />
+<span class="product-category">@product.Category</span>
+</div>
+            <div class="product-heading">
+<h3>@product.Name</h3>
+<span>@ShopRules.Money(product.PriceCents)</span>
+</div>
+            <p>@product.Description</p>
+            <form method="post" asp-page-handler="Add" asp-route-category="@Model.Category">
+<input type="hidden" name="productId" value="@product.Id" />
+<button class="add-button" type="submit" aria-label="Add @product.Name to cart">Add to cart <span aria-hidden="true">+</span>
+</button>
+</form>
+        </article>
+    }
+    </div>
+    @if (Model.Products.Count == 0) { <p class="empty">No products in this category. <a asp-page="/Index">Browse all products.</a>
+</p> }
+</section>
+<div class="store-notes">
+<div>
+<strong>Made for the everyday</strong>
+<p>Practical favourites for your campus routine.</p>
+</div>
+<div>
+<strong>A simple shopping experience</strong>
+<p>Browse, add to your cart and try a demo checkout.</p>
+</div>
+<div>
+<strong>A student-built project</strong>
+<p>Created for Software Deployment and Evolution.</p>
+</div>
 </div>

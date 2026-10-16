@@ -363,3 +363,32 @@ MigrationBackup/
 FodyWeavers.xsd
 
 **/build/
+# Local application data and verification output
+**/App_Data/
+*.db
+*.db-shm
+*.db-wal
+**/TestResults/
+.artifacts/
+
+# The Visual Studio template ignores *.e2e; retain our acceptance test project.
+!SoftwareDeploymentProject.E2E/
+
+# Selected, reviewed report evidence is intentionally retained.
+!docs/evidence/*.log
+!docs/evidence/**/*.log
+
+# Build outputs
+build/
+bin/
+obj/
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+*.deps.json
+
+# User specific files
+*.user
+*.suo

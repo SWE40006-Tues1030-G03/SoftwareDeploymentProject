@@ -1,0 +1,39 @@
+@model string
+<svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="product-art">
+<ellipse cx="120" cy="173" rx="65" ry="9" fill="#000" opacity=".06" />
+@if (Model == "hoodie") {
+<g>
+    <path d="M92 55L70 61L35 117L63 134L80 108V170H160V108L177 134L205 117L170 61L148 55" fill="#34373A" stroke="#202225" stroke-width="3" />
+    <path d="M92 55C85 12 155 12 148 55L120 76Z" fill="#45494D" stroke="#202225" stroke-width="3" />
+    <path d="M106 69V104M134 69V104M98 142H142L150 163H90Z" stroke="#797C7F" stroke-width="2" />
+    <text x="120" y="126" text-anchor="middle" fill="white" font-size="11" font-family="sans-serif" font-weight="bold">SWINBURNE</text>
+</g>
+} else if (Model == "tote") {
+<g>
+    <path d="M72 68H168L180 170H60Z" fill="#E0CCA9" stroke="#AE9872" stroke-width="3" />
+    <path d="M94 73V50C94 14 146 14 146 50V73" stroke="#AE9872" stroke-width="9" />
+    <rect x="98" y="105" width="44" height="44" fill="#BE2636" /><text x="120" y="137" text-anchor="middle" fill="white" font-size="31" font-family="serif">S</text>
+</g>
+} else if (Model == "notebook") {
+<g>
+    <rect x="70" y="29" width="102" height="143" rx="7" fill="#B52A39" stroke="#8E202C" stroke-width="3" />
+    <path d="M82 30V172M153 30V172" stroke="#77202D" stroke-width="3" /><path d="M90 157H144" stroke="#EAB2B8" stroke-width="2" />
+    <text x="119" y="90" text-anchor="middle" fill="#FFF3E2" font-size="13" font-family="sans-serif">BIG IDEAS</text><text x="119" y="108" text-anchor="middle" fill="#FFF3E2" font-size="9" font-family="sans-serif">START HERE.</text>
+</g>
+} else if (Model == "bottle") {
+<g>
+    <rect x="104" y="22" width="32" height="22" rx="4" fill="#303A36" />
+    <path d="M101 44H139V63Q153 72 153 92V158Q153 174 137 174H103Q87 174 87 158V92Q87 72 101 63Z" fill="#7B9786" stroke="#476354" stroke-width="3" />
+    <path d="M98 92V151" stroke="#ACC0B2" stroke-width="5" stroke-linecap="round" /><text x="120" y="124" text-anchor="middle" fill="white" font-size="24" font-family="serif">S</text>
+</g>
+} else if (Model == "tee") {
+<g>
+    <path d="M93 38L66 49L29 92L60 116L80 92V170H160V92L180 116L211 92L174 49L147 38Q120 68 93 38Z" fill="#EDE7DA" stroke="#BFB6A5" stroke-width="3" />
+    <path d="M93 38Q120 84 147 38" stroke="#BFB6A5" stroke-width="3" /><rect x="105" y="96" width="30" height="31" fill="#BE2636" /><text x="120" y="119" text-anchor="middle" fill="white" font-size="23" font-family="serif">S</text>
+</g>
+} else {
+<g>
+    <g transform="rotate(18 120 100)"><rect x="83" y="34" width="13" height="127" rx="6" fill="#353A42" /><rect x="112" y="34" width="13" height="127" rx="6" fill="#BC3545" /><rect x="141" y="34" width="13" height="127" rx="6" fill="#809989" /><path d="M83 64H96M112 64H125M141 64H154" stroke="#DDD7CC" stroke-width="4" /><path d="M86 160L89 177L93 160M115 160L118 177L122 160M144 160L147 177L151 160" fill="#8D8C86" /></g>
+</g>
+}
+</svg>
