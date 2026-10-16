@@ -38,3 +38,7 @@ The full Release verification was repeated before finalising the handover, using
 These results prove local application behaviour and the published-app verification script. They do not prove Docker execution, Linux runner compatibility, private registry publishing, distinct group test/staging servers, AWS deployment, public HTTPS, live persistence or production monitoring. Docker's daemon was stopped on the development machine. The team must capture those actual results separately.
 
 Screenshots are selected evidence, not a full accessibility audit. Preserve this record when adding later runs; use dated subdirectories for additional production/CI evidence and include the relevant commit SHA/image digest.
+
+## Local stylesheet fix verification
+
+The source-run styling issue was reproduced and corrected after the handover. [Browser screenshot](local-stylesheet-fixed.jpg) shows the corrected local layout. [Full verification output](stylesheet-fix-2026-10-16/verification.log), [application results](stylesheet-fix-2026-10-16/application-tests.trx) and [browser results](stylesheet-fix-2026-10-16/acceptance-tests.trx) record 27 application tests and 1 browser journey passing, with zero failures. The browser journey now verifies that CSS styling is applied.

@@ -68,6 +68,7 @@ No automatic expiration job is implemented. Cart cookies expire after seven days
 | POST returns 400 | Reload the page for a fresh antiforgery token; check cookies and persistent Data Protection keys |
 | Browser test cannot find executable | Run the documented Playwright browser installation; Linux needs system dependencies |
 | Images/styles missing in published app | Run publish output with its content root; preserve all publish files, not just the DLL |
+| Page loads as plain text with an oversized illustration | Update to the latest `Christoms-Branch`, stop the old app with Ctrl+C, run it again and refresh. A local static-asset compression issue was fixed by serving `wwwroot` through Static File Middleware. The browser test now checks that styling is applied. |
 | Receipt returns 404 | Use the same browser cookie; starting another cart or clearing cookies removes access to the old receipt |
 | Cart resets after container replacement | Correct the `/data` volume mount and `Shop__DatabasePath`; see deployment guide |
 

@@ -16,6 +16,7 @@ public class ShoppingTests
         var evidence = Path.GetFullPath(Environment.GetEnvironmentVariable("SHOP_EVIDENCE_DIR") ?? "TestResults/browser");
         Directory.CreateDirectory(evidence);
         await page.GotoAsync(url);
+        await Assertions.Expect(page.Locator(".site-header")).ToHaveCSSAsync("display", "flex");
         await Assertions.Expect(page.GetByRole(AriaRole.Heading, new() { Name = "Shop the essentials" })).ToBeVisibleAsync();
         await page.ScreenshotAsync(new() { Path = Path.Combine(evidence, "01-catalogue-desktop.png"), FullPage = true });
         await page.GetByRole(AriaRole.Button, new() { Name = "Add Campus hoodie to cart", Exact = true }).ClickAsync();

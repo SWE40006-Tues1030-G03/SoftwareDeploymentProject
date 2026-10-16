@@ -20,10 +20,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 // TLS is terminated by the production reverse proxy. Local/container HTTP stays usable.
+// Serve wwwroot directly in both source runs and published deployments.
+app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
-app.MapStaticAssets();
-app.MapRazorPages().WithStaticAssets();
+app.MapRazorPages();
 app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
 app.MapGet("/health/ready", (ShopStore store, ILogger<Program> logger) =>
 {

@@ -61,3 +61,9 @@ Repeated full verification: locked restore, 27 unit/integration tests, Release p
 ## 16 October 2026 — named handover branch and Word guides
 
 At Christom's request, created `Christoms-Branch` from the completed application branch and included both Word guides in Git. This supersedes the earlier instruction to keep Word files local. Updated the current setup/short guide to use this branch. Included the existing IDE `.sln` alongside the documented `.slnx`. The detailed Word reference is retained as originally prepared; the AWS access review is the current source for infrastructure status. Commit title: Complete Christom application handover with tests and both Word guides.
+
+## 16 October 2026 — local stylesheet delivery fix
+
+Christom reported an unstyled VS Code run. Reproduced on the documented source command: the fingerprinted CSS URL returned 200 with an empty body when the request accepted compression, while an uncompressed request returned the stylesheet. Switched to Static File Middleware serving `wwwroot` and ordinary Razor Pages mapping, retaining the layout's versioned CSS link. Added a computed-style assertion to the existing Chromium journey so visible content alone cannot pass as a styled page. Restart the running app after updating; this changes server startup code. The detailed Word guide predates this fix; `Program.cs` now uses `UseStaticFiles` instead of `MapStaticAssets`/`WithStaticAssets`.
+
+Verification after the fix: 27 application tests and 1 browser journey passed; Release publish succeeded. The actual source-run browser rendered the intended layout, and a compression-capable request returned 10,369 bytes of CSS with content type text/css. See `docs/evidence/stylesheet-fix-2026-10-16/` and `docs/evidence/local-stylesheet-fixed.jpg`.
