@@ -48,7 +48,6 @@ The browser command starts and stops its own published app on port 5087 and dele
 
 | Read | Purpose |
 | --- | --- |
-| [Word code and contribution guide](docs/Campus_Store_Code_and_Contribution_Guide.docx) | Detailed folder, file and variable reference plus completed contribution |
 | [Handover](docs/HANDOVER.md) | Current status, team responsibilities and next actions |
 | [Setup](docs/SETUP.md) | Run, configure, restart, back up and troubleshoot |
 | [Architecture](docs/ARCHITECTURE.md) | Code walkthrough, schema, decisions and limits |
