@@ -18,7 +18,10 @@ jobs:
         dotnet-version: 10.0.x
     - name: Restore dependencies
       run: dotnet restore
-     
+      
+    - name: Run automated tests
+      run: dotnet test SoftwareDeploymentProject.Tests/SoftwareDeploymentProject.Tests.csproj -c Release
+
     - name: Publish
       run: dotnet publish SoftwareDeploymentProject/SoftwareDeploymentProject.csproj -c Release -o publish
     
@@ -91,3 +94,4 @@ jobs:
         tags: |
           977456087342.dkr.ecr.ap-southeast-2.amazonaws.com/swe40006-tues1030-g03/softwaredeploymentproject:latest
           ghcr.io/swe40006-tues1030-g03/softwaredeploymentproject:latest
+      
