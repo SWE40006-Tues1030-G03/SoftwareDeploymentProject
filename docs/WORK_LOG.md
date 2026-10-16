@@ -45,3 +45,7 @@ No AWS resources or credentials were created, modified or used. Existing Dockerf
 ### Future log entries
 
 Record date/author, change/decision, affected files/resources, verification command and actual result, evidence location, commit/image reference, rollback and outstanding tasks. Record credentials by secret name/location only.
+
+## 16 October 2026 — detailed Word reference
+
+Added `Campus_Store_Code_and_Contribution_Guide.docx` with the complete 124-file source-snapshot inventory, folder/generated-file explanations, application and test variable glossary, database/configuration reference and Christom contribution summary. The 41-page document was rendered and every page visually inspected. The guide distinguishes local application verification from pending cloud/pipeline verification. Application source and infrastructure were not changed for this documentation request.
