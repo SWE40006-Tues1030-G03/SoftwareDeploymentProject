@@ -17,7 +17,7 @@ jobs:
       with:
         dotnet-version: 10.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore SoftwareDeploymentProject/SoftwareDeploymentProject.csproj
       
     - name: Run automated tests
       run: dotnet test SoftwareDeploymentProject.Tests/SoftwareDeploymentProject.Tests.csproj -c Release
