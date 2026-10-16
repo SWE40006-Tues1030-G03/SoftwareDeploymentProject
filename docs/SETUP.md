@@ -8,7 +8,7 @@ Use a .NET 10 SDK. `global.json` permits installed .NET 10 feature bands, while 
 git clone https://github.com/SWE40006-Tues1030-G03/SoftwareDeploymentProject.git
 cd SoftwareDeploymentProject
 # If reviewing Christom's work before merge:
-git switch codex/shopping-cart
+git switch Christoms-Branch
 dotnet --info
 dotnet restore SoftwareDeploymentProject.slnx --locked-mode
 dotnet run --project SoftwareDeploymentProject --no-launch-profile --urls http://localhost:5080

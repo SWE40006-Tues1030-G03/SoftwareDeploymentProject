@@ -4,7 +4,7 @@
 
 This contribution provides the application foundation, automated tests and documentation. It uses the main team's existing .NET project rather than the previously suggested Flask/React examples. The separate `ExperimentWithActions` repository was inspected as context and remains unchanged.
 
-**Start with:** [short team and presentation guide](QUICK_GUIDE.md), then [README](../README.md) for commands. The work branch is `codex/shopping-cart`; the default branch is named `master`, not `main`. The application commits have been pushed to the work branch. A merge into `master` triggers image publishing, so the team should review the pull request and its checks first.
+**Start with:** [short team and presentation guide](QUICK_GUIDE.md), then [README](../README.md) for commands. The work branch is `Christoms-Branch`; the default branch is named `master`, not `main`. The application commits have been pushed to the work branch. A merge into `master` triggers image publishing, so the team should review the pull request and its checks first.
 
 ## Ownership and handover boundaries
 
@@ -37,7 +37,7 @@ Pending external verification: Docker execution, GitHub Actions execution for th
 2. Judah confirms the deployment target. Preserve the existing WordPress workload on `SWE40006-WebServer-Pass`; this is not an empty server. Resolve the different server and ECR accounts before granting deployment access.
 3. Amogh and Tang Ky review the runtime/data contract, then run the container and pipeline checks they own. A local test pass does not establish their results.
 4. If production is available, Christom runs the checklist in [deployment](DEPLOYMENT.md). Otherwise, the group names a covering teammate to run it after deployment and records production verification as pending until then.
-5. Use the short guide for presentation preparation. The large Word reference remains a local lookup document; share it separately if needed. No Word documents are included in Git, following Christom's earlier request.
+5. Use the short guide for presentation preparation. Both Word guides are included in this branch under `docs/`. Start with the four-page guide; use the larger reference for detailed code explanations. The large reference predates the AWS access work; use the AWS access review for the current infrastructure status.
 
 ## Where evidence lives
 

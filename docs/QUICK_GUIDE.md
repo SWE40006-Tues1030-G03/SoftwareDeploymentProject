@@ -10,7 +10,7 @@ Campus Store is an unofficial university themed shopping demo. A shopper can bro
 
 The app and local tests are complete. The latest handover run passed 27 unit/integration tests and one Chromium acceptance test, with no failures or skips. Release publication also succeeded. AWS deployment, production monitoring and production functionality checks are still pending.
 
-The code is on `codex/shopping-cart` in the team's SoftwareDeploymentProject repository. The default branch is called `master`. Review and merge the work through the team's normal process; pushing a work branch does not put the app on the live server.
+The code is on `Christoms-Branch` in the team's SoftwareDeploymentProject repository. The default branch is called `master`. Review and merge the work through the team's normal process; pushing a work branch does not put the app on the live server.
 
 ## Who does what next
 
@@ -36,7 +36,7 @@ Install Git and the .NET 10 SDK. Use a terminal in the repository root, beside `
 ```sh
 git clone https://github.com/SWE40006-Tues1030-G03/SoftwareDeploymentProject.git
 cd SoftwareDeploymentProject
-git switch codex/shopping-cart
+git switch Christoms-Branch
 dotnet restore SoftwareDeploymentProject.slnx --locked-mode
 dotnet run --project SoftwareDeploymentProject --no-launch-profile --urls http://localhost:5080
 ```

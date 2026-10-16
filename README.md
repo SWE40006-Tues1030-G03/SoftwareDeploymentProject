@@ -44,6 +44,10 @@ The browser command starts and stops its own published app on port 5087 and dele
 - Responsive layouts, labelled controls, keyboard focus and a skip link.
 - `/health` for liveness and `/health/ready` for database readiness.
 
+## Word guides
+
+Both documents are included on `Christoms-Branch`. Start with the [four-page handover and presentation guide](docs/Campus_Store_Quick_Handover_and_Presentation_Guide.docx). Use the [detailed code and contribution reference](docs/Campus_Store_Code_and_Contribution_Guide.docx) for file and variable explanations. The detailed reference was prepared before the later AWS access work; [AWS access review](docs/AWS_ACCESS_REVIEW.md) records the current server findings.
+
 ## Handover map
 
 | Read | Purpose |

@@ -57,3 +57,7 @@ Added a short team/presentation guide and a four-page local Word edition. It cov
 Reconciled the handover and deployment notes with the latest responsibility table: Christom owns development/testing and production functionality checks, assists Judah; Judah leads AWS/monitoring; Amogh leads Docker/staging; Tang Ky leads CI/CD. Documented that the covering teammate's acceptance and the live production check remain pending. No deployment or default-branch merge is claimed.
 
 Repeated full verification: locked restore, 27 unit/integration tests, Release publish and 1 Chromium acceptance test all passed. Evidence is retained in `docs/evidence/handover-2026-10-16/`. Checked documentation links and diff whitespace. No application code changes were needed for this handover. Left the user's untracked IDE `.sln` untouched; documented commands use the existing tracked `.slnx`.
+
+## 16 October 2026 — named handover branch and Word guides
+
+At Christom's request, created `Christoms-Branch` from the completed application branch and included both Word guides in Git. This supersedes the earlier instruction to keep Word files local. Updated the current setup/short guide to use this branch. Included the existing IDE `.sln` alongside the documented `.slnx`. The detailed Word reference is retained as originally prepared; the AWS access review is the current source for infrastructure status. Commit title: Complete Christom application handover with tests and both Word guides.
