@@ -1,0 +1,10 @@
+
+**/bin
+**/obj
+**/build
+.git
+.vs
+.vscode
+**/.env
+**/.env.*
+**/*.pem
