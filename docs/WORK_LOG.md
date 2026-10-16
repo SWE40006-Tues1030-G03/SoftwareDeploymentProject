@@ -45,3 +45,15 @@ No AWS resources or credentials were created, modified or used. Existing Dockerf
 ### Future log entries
 
 Record date/author, change/decision, affected files/resources, verification command and actual result, evidence location, commit/image reference, rollback and outstanding tasks. Record credentials by secret name/location only.
+
+## 16 October 2026 — AWS access restoration and inventory
+
+Christom approved updating the existing SWE40006 server's SSH source to the laptop's current public `/32`. AWS confirmed the update and direct SSH succeeded with the existing local key. Read-only inspection found an existing WordPress/Apache/PHP/MariaDB workload and no Docker installation. No application files, services or database records were changed. See [AWS access review](AWS_ACCESS_REVIEW.md) for resource IDs, procedure, verification, evidence, rollback and remaining deployment decisions. This later entry supersedes the earlier no-AWS-actions statement for the access work only; Campus Store production deployment remains unverified.
+
+## 16 October 2026 — final application handover
+
+Added a short team/presentation guide and a four-page local Word edition. It covers setup, the key code locations, design explanations, a demo script, tutor questions, ownership and pending production checks. The large Word reference is retained. Both Word files stay outside Git, following Christom's earlier request; the short guide's Markdown source is version controlled.
+
+Reconciled the handover and deployment notes with the latest responsibility table: Christom owns development/testing and production functionality checks, assists Judah; Judah leads AWS/monitoring; Amogh leads Docker/staging; Tang Ky leads CI/CD. Documented that the covering teammate's acceptance and the live production check remain pending. No deployment or default-branch merge is claimed.
+
+Repeated full verification: locked restore, 27 unit/integration tests, Release publish and 1 Chromium acceptance test all passed. Evidence is retained in `docs/evidence/handover-2026-10-16/`. Checked documentation links and diff whitespace. No application code changes were needed for this handover. Left the user's untracked IDE `.sln` untouched; documented commands use the existing tracked `.slnx`.

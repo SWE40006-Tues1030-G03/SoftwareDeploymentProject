@@ -29,7 +29,11 @@ Final dependency audit: application, unit/integration and browser projects repor
 
 Additional checks: C# whitespace formatting completed; `git diff --check` passed; Bash syntax and workflow YAML parsed; local documentation links resolved.
 
-## Boundaries
+## Handover rerun on 16 October 2026
+
+The full Release verification was repeated before finalising the handover, using the same local SDK and `bash scripts/verify.sh --browser`. Result: **27 application tests and 1 Chromium test passed, zero failures or skips**; Release publication succeeded. See the [rerun output](handover-2026-10-16/verification.log), [application results](handover-2026-10-16/application-tests.trx) and [browser results](handover-2026-10-16/acceptance-tests.trx). This rerun does not change the production/CI evidence boundaries below.
+
+## Evidence boundaries
 
 These results prove local application behaviour and the published-app verification script. They do not prove Docker execution, Linux runner compatibility, private registry publishing, distinct group test/staging servers, AWS deployment, public HTTPS, live persistence or production monitoring. Docker's daemon was stopped on the development machine. The team must capture those actual results separately.
 

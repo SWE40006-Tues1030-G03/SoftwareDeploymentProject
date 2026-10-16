@@ -374,6 +374,8 @@ FodyWeavers.xsd
 
 # Selected, reviewed report evidence is intentionally retained.
 !docs/evidence/*.log
+!docs/evidence/**/*.log
 
 # Local Word reference retained outside version control
 /docs/Campus_Store_Code_and_Contribution_Guide.docx
+/docs/Campus_Store_Quick_Handover_and_Presentation_Guide.docx

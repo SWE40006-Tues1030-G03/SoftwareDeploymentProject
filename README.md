@@ -48,6 +48,7 @@ The browser command starts and stops its own published app on port 5087 and dele
 
 | Read | Purpose |
 | --- | --- |
+| [Short team and presentation guide](docs/QUICK_GUIDE.md) | Essential explanation, demo, tutor questions and next owners |
 | [Handover](docs/HANDOVER.md) | Current status, team responsibilities and next actions |
 | [Setup](docs/SETUP.md) | Run, configure, restart, back up and troubleshoot |
 | [Architecture](docs/ARCHITECTURE.md) | Code walkthrough, schema, decisions and limits |
@@ -56,6 +57,7 @@ The browser command starts and stops its own published app on port 5087 and dele
 | [Assessment and demo](docs/ASSESSMENT.md) | Requirements mapping, evidence and presentation walkthrough |
 | [Work log](docs/WORK_LOG.md) | Changes, problems encountered and verification record |
 | [Evidence](docs/evidence/README.md) | Captured local screenshots and test logs |
+| [AWS access review](docs/AWS_ACCESS_REVIEW.md) | Verified server access, existing WordPress workload and change rollback |
 
 The existing image-publishing workflow now runs application tests and browser acceptance checks before its build artifact is uploaded. **A production deployment, production monitoring and isolated team test/staging infrastructure still need to be completed by the group.** Local tests do not prove those requirements are complete.
 
