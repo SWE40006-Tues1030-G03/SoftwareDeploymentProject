@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# Local application data and verification output
+**/App_Data/
+*.db
+*.db-shm
+*.db-wal
+**/TestResults/
+.artifacts/
+
+# The Visual Studio template ignores *.e2e; retain our acceptance test project.
+!SoftwareDeploymentProject.E2E/

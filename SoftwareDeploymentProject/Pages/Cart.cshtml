@@ -1,0 +1,67 @@
+@page
+@model SoftwareDeploymentProject.Pages.CartModel
+@using SoftwareDeploymentProject.Models
+@{ ViewData["Title"] = "Your cart"; }
+<div class="page-heading">
+<p class="eyebrow">YOUR CAMPUS ESSENTIALS</p>
+<h1>Your cart<span class="muted"> / @Model.Cart.ItemCount</span>
+</h1>
+<a asp-page="/Index">← Continue shopping</a>
+</div>
+@if (Model.Notice is not null) { <div class="notice" role="status">@Model.Notice</div> }
+@if (Model.Cart.ItemCount == 0) {
+    <section class="empty">
+<h2>A little room for something good.</h2>
+<p>Your cart is empty. Discover your next everyday favourite.</p>
+<a class="button button-dark" asp-page="/Index">Browse the collection →</a>
+</section>
+} else {
+<div class="cart-layout">
+<section aria-label="Cart items">
+@foreach (var line in Model.Cart.Lines) {
+    <article class="cart-item" data-testid="cart-item-@line.Product.Id">
+<div class="cart-art art-@line.Product.Icon">
+<partial name="_ProductArt" model="line.Product.Icon" />
+</div>
+<div class="cart-detail">
+<p class="eyebrow">@line.Product.Category</p>
+<h2>@line.Product.Name</h2>
+<p>@ShopRules.Money(line.Product.PriceCents) each</p>
+    <form method="post" asp-page-handler="Update" class="quantity-form">
+<input type="hidden" name="productId" value="@line.Product.Id" />
+<label for="quantity-@line.Product.Id">Quantity</label>
+<input id="quantity-@line.Product.Id" name="quantity" type="number" min="1" max="20" required value="@line.Quantity" />
+<button type="submit">Update</button>
+</form>
+    <form method="post" asp-page-handler="Remove">
+<input type="hidden" name="productId" value="@line.Product.Id" />
+<button class="text-button" type="submit" aria-label="Remove @line.Product.Name">Remove</button>
+</form>
+</div>
+<strong>@ShopRules.Money(line.TotalCents)</strong>
+</article>
+}
+</section>
+<aside class="order-summary">
+<p class="eyebrow">THE DETAILS</p>
+<h2>Order summary</h2>
+<div class="summary-row">
+<span>Subtotal</span>
+<span>@ShopRules.Money(Model.Cart.TotalCents)</span>
+</div>
+<div class="summary-row">
+<span>Delivery</span>
+<span>Demo collection</span>
+</div>
+<div class="summary-total">
+<span>Total <small>AUD</small>
+</span>
+<strong data-testid="cart-total">@ShopRules.Money(Model.Cart.TotalCents)</strong>
+</div>
+<form method="post" asp-page-handler="Checkout">
+<button class="button button-red" type="submit">Place demo order →</button>
+</form>
+<p class="fine-print">This is a simulated checkout. No payment, delivery or personal details are required. Your order is saved for demonstration purposes.</p>
+</aside>
+</div>
+}

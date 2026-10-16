@@ -1,0 +1,23 @@
+@page
+@model SoftwareDeploymentProject.Pages.ConfirmationModel
+@using SoftwareDeploymentProject.Models
+@{ ViewData["Title"] = "Order confirmed"; }
+<section class="confirmation">
+<span class="success-mark" aria-hidden="true">✓</span>
+<p class="eyebrow">ALL SET</p>
+<h1>Your demo order is confirmed.</h1>
+<p>Thanks for trying the Campus Store. Your order has been saved.</p>
+<p class="fine-print">This is a demonstration. No payment was taken and no items will be dispatched.</p>
+<div class="receipt">
+<h2>Order receipt</h2>
+<p class="reference">Reference: @Model.Order.Reference</p>
+<p class="fine-print">@Model.Order.CreatedUtc (UTC)</p>@foreach (var line in Model.Order.Lines) { <div class="summary-row">
+<span>@line.Name × @line.Quantity</span>
+<span>@ShopRules.Money(line.PriceCents * line.Quantity)</span>
+</div> }<div class="summary-total">
+<span>Total AUD</span>
+<strong>@ShopRules.Money(Model.Order.TotalCents)</strong>
+</div>
+</div>
+<a class="button button-dark" asp-page="/Index">Back to the collection →</a>
+</section>

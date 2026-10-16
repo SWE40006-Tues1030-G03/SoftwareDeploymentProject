@@ -1,26 +1,38 @@
+using Microsoft.Data.Sqlite;
+using Microsoft.AspNetCore.DataProtection;
+using SoftwareDeploymentProject.Services;
+
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddHttpContextAccessor();
+var databasePath = builder.Configuration["Shop:DatabasePath"] ?? "App_Data/shop.db";
+if (!Path.IsPathRooted(databasePath)) databasePath = Path.Combine(builder.Environment.ContentRootPath, databasePath);
+Directory.CreateDirectory(Path.GetDirectoryName(databasePath)!);
+builder.Services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(Path.GetDirectoryName(databasePath)!, "keys")));
+var connectionString = new SqliteConnectionStringBuilder { DataSource = databasePath, ForeignKeys = true }.ToString();
+builder.Services.AddSingleton(new ShopStore(connectionString));
+builder.Services.AddScoped<CartIdentity>();
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
+app.Services.GetRequiredService<ShopStore>().Initialize();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-app.UseHttpsRedirection();
-
+// TLS is terminated by the production reverse proxy. Local/container HTTP stays usable.
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
-
+app.MapRazorPages().WithStaticAssets();
+app.MapGet("/health", () => Results.Ok(new { status = "healthy" }));
+app.MapGet("/health/ready", (ShopStore store, ILogger<Program> logger) =>
+{
+    try { return store.IsReady() ? Results.Ok(new { status = "ready" }) : Results.StatusCode(503); }
+    catch (SqliteException exception)
+    {
+        logger.LogError(exception, "Database readiness check failed");
+        return Results.StatusCode(503);
+    }
+});
 app.Run();
+public partial class Program { }

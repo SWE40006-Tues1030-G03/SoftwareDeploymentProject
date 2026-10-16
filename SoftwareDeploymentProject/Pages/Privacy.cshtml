@@ -1,8 +1,16 @@
-﻿@page
+@page
 @model PrivacyModel
-@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
-
-<p>Use this page to detail your site's privacy policy.</p>
+@{ ViewData["Title"] = "Privacy & demo information"; }
+<section class="prose">
+<p class="eyebrow">ABOUT THIS DEMO</p>
+<h1>Privacy &amp; demo information</h1>
+<p>This unofficial student project demonstrates a deployment pipeline for SWE40006. It is not an official Swinburne shop.</p>
+<h2>What is stored?</h2>
+<p>An essential anonymous cart cookie identifies your cart for up to seven days. Product selections, quantities and demo orders are saved in the application's database. No names, email addresses, addresses or payment details are requested.</p>
+<h2>Order access</h2>
+<p>Your receipt is available using the same browser cookie until you start a new cart. Clearing cookies removes your access to that cart and receipt; it does not erase database records. Cart and order records remain until the team deletes or resets the demo database.</p>
+<h2>Operational logs</h2>
+<p>The hosting platform may record request metadata such as URLs, timestamps and IP addresses. The team should restrict log access and choose an appropriate retention period before public deployment.</p>
+<h2>Demonstration only</h2>
+<p>Orders do not involve real payments, shipping, inventory reservations or university services.</p>
+</section>
