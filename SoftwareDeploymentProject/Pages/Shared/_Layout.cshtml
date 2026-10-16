@@ -1,52 +1,40 @@
-﻿<!DOCTYPE html>
+@inject SoftwareDeploymentProject.Services.ShopStore Store
+@inject SoftwareDeploymentProject.Services.CartIdentity Identity
+@{ var count = Store.GetCart(Identity.Get()).ItemCount; }
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SoftwareDeploymentProject</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <meta name="description" content="Campus essentials. A Swinburne student shopping cart demonstration for SWE40006." />
+    <title>@ViewData["Title"] · Campus Store</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/SoftwareDeploymentProject.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SoftwareDeploymentProject</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="announcement">Made for campus life. Built for a DevOps demonstration.</div>
+    <header class="site-header">
+        <a class="brand" asp-page="/Index">
+<span class="brand-mark" aria-hidden="true">S</span>
+<span>SWINBURNE<small>CAMPUS STORE</small>
+</span>
+</a>
+        <nav aria-label="Main navigation">
+            <a asp-page="/Index" class="nav-shop">Shop essentials</a>
+            <a asp-page="/Cart" class="cart-link">Your cart <span class="cart-count" data-testid="cart-count">@count</span>
+</a>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - SoftwareDeploymentProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <main id="main" class="container">@RenderBody()</main>
+    <footer class="site-footer">
+<div>
+<strong>Campus Store</strong>
+<p>A SWE40006 student project. Unofficial demonstration store.</p>
+</div>
+<p>Prices in AUD · Simulated checkout · No payments collected<br />
+<a asp-page="/Privacy">Privacy &amp; demo information</a>
+</p>
+</footer>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

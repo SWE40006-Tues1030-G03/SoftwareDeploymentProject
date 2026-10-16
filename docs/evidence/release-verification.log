@@ -1,0 +1,22 @@
+  Determining projects to restore...
+  Restored /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject/SoftwareDeploymentProject.csproj (in 126 ms).
+  Restored /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.Tests/SoftwareDeploymentProject.Tests.csproj (in 129 ms).
+  SoftwareDeploymentProject -> /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject/bin/Release/net10.0/SoftwareDeploymentProject.dll
+  SoftwareDeploymentProject.Tests -> /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.Tests/bin/Release/net10.0/SoftwareDeploymentProject.Tests.dll
+Test run for /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.Tests/bin/Release/net10.0/SoftwareDeploymentProject.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+WARNING: Overwriting results file: /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/.artifacts/tests/application-tests.trx
+Results File: /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/.artifacts/tests/application-tests.trx
+
+Passed!  - Failed:     0, Passed:    27, Skipped:     0, Total:    27, Duration: 1 s - SoftwareDeploymentProject.Tests.dll (net10.0)
+  SoftwareDeploymentProject -> /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject/bin/Release/net10.0/SoftwareDeploymentProject.dll
+  SoftwareDeploymentProject -> /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/publish/
+  Determining projects to restore...
+  Restored /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.E2E/SoftwareDeploymentProject.E2E.csproj (in 150 ms).
+  SoftwareDeploymentProject.E2E -> /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.E2E/bin/Release/net10.0/SoftwareDeploymentProject.E2E.dll
+Test run for /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.E2E/bin/Release/net10.0/SoftwareDeploymentProject.E2E.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+WARNING: Overwriting results file: /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/.artifacts/tests/acceptance-tests.trx
+Results File: /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/.artifacts/tests/acceptance-tests.trx
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 2 s - SoftwareDeploymentProject.E2E.dll (net10.0)

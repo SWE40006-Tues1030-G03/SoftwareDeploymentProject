@@ -1,0 +1,9 @@
+  Determining projects to restore...
+  Restored /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject/SoftwareDeploymentProject.csproj (in 119 ms).
+  Restored /Users/christomalappadan/Documents/ChatGPT/SWE40006/SoftwareDeploymentProject/SoftwareDeploymentProject.Tests/SoftwareDeploymentProject.Tests.csproj (in 121 ms).
+
+The following sources were used:
+   https://api.nuget.org/v3/index.json
+
+The given project `SoftwareDeploymentProject.Tests` has no vulnerable packages given the current sources.
+The given project `SoftwareDeploymentProject` has no vulnerable packages given the current sources.
