@@ -1,0 +1,28 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_KEY }}
+          port: 22
+          script: |
+            cd /home/ec2-user/SoftwareDeploymentProject
+            git pull origin master
+            docker build -f SoftwareDeploymentProject.multistage.dockerfile -t campus-store:aws .
+            docker stop campus-store || true
+            docker rm campus-store || true
+            docker run -d --restart always --name campus-store -p 8080:8080 -e ASPNETCORE_ENVIRONMENT=Production -e ASPNETCORE_URLS=http://+:8080 -e Shop__DatabasePath=/data/shop.db -e Shop__SecureCookies=false -v campus-store-data:/data campus-store:aws
